@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: El valor no es el esperado: Foto10 != Foto1\n",
+      "children" : [ {
+        "name" : "GET pet data",
+        "uid" : "3bfcc1a37698581d",
+        "parentUid" : "2b8e6a31951a9c49777b620135fd5135",
+        "status" : "failed",
+        "time" : {
+          "start" : 1583810364337,
+          "stop" : 1583810365329,
+          "duration" : 992
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2b8e6a31951a9c49777b620135fd5135"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

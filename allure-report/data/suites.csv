@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Mar 10 00:19:25 ART 2020","Tue Mar 10 00:19:26 ART 2020","800","","","","","","Retrieve pet data",""
+"failed","Tue Mar 10 00:19:24 ART 2020","Tue Mar 10 00:19:25 ART 2020","992","","","","","","GET pet data",""
+"passed","Tue Mar 10 00:19:26 ART 2020","Tue Mar 10 00:19:27 ART 2020","801","","","","","","Get json as body parameters",""
+"passed","Tue Mar 10 00:19:26 ART 2020","Tue Mar 10 00:19:26 ART 2020","747","","","","","","built body parameters data",""

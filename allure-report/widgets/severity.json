@@ -1,0 +1,41 @@
+[ {
+  "uid" : "831dfbacc19679d1",
+  "name" : "Get json as body parameters",
+  "time" : {
+    "start" : 1583810366884,
+    "stop" : 1583810367685,
+    "duration" : 801
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3bfcc1a37698581d",
+  "name" : "GET pet data",
+  "time" : {
+    "start" : 1583810364337,
+    "stop" : 1583810365329,
+    "duration" : 992
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "ec1279bb672a2310",
+  "name" : "Retrieve pet data",
+  "time" : {
+    "start" : 1583810365330,
+    "stop" : 1583810366130,
+    "duration" : 800
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c316fe2bf6f448eb",
+  "name" : "built body parameters data",
+  "time" : {
+    "start" : 1583810366136,
+    "stop" : 1583810366883,
+    "duration" : 747
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
