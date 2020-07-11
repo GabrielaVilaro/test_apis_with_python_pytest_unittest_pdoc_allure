@@ -15,39 +15,39 @@ EN CURSO DESDE 9/07/2020
 
 El curso incluye: 
 
-  Postman
+  *Postman
 
-  Curl
+  *Curl
 
-  Python orientado a pruebas de software.
+  *Python orientado a pruebas de software.
 
-  Estructuras de datos.
+  *Estructuras de datos.
 
-  Framworks de pruebas con python.
+  *Framworks de pruebas con python.
 
-  Preparacion de entornos Windows
+  *Preparacion de entornos Windows
 
-  Jenkins
+  *Jenkins
 
-  Pipelines de ejecucion de pruebas.
+  *Pipelines de ejecucion de pruebas.
 
 
   Librerías:
 
-  Pytest,
+  *Pytest,
 
-  Unittest,
+  *Unittest,
 
-  Requests,
+  *Requests,
 
-  Re (Regular Expressions),
+  *Re (Regular Expressions),
 
-  Time,
+  *Time,
 
-  json.
+  *json.
 
-  Allure (para reportes)
+  *Allure (para reportes)
 
-  ObjectPath.
+  *ObjectPath.
 
 
