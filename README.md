@@ -3,6 +3,14 @@ Test sobre APIs, del curso de Udemy https://www.udemy.com/course/la-guia-complet
 
 Los test fueron modificados por mi, con el fin de aprender y emprolijarlos, orientándolos al paradigma de objetos.
 
+APIs usadas:
+
+NASA: https://api.nasa.gov/
+
+Biblia: https://scripture.api.bible/
+
+Pet Store: https://petstore.swagger.io/
+
 EN CURSO DESDE 9/07/2020
 
 El curso incluye: 
