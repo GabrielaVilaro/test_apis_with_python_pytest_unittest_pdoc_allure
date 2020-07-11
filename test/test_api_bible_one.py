@@ -15,10 +15,11 @@ class Test01(unittest.TestCase):
 
         response = requests.get(self.url, headers=self.new_header)
         json_response = json.loads(response.text)
+        print(json.dumps(json_response, indent=3))
 
+        assert response.status_code == 200
         assert json_response['data'][0]['id'] is not None, "El campo esta vacio"
         assert json_response['data'][0]['language']['nameLocal'] == 'Nend'
-
         print(json_response['data'][0]['id'], json_response['data'][0]['language']['nameLocal'])
 
     def tearDown(self):

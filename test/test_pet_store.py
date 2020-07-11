@@ -1,6 +1,5 @@
 import requests
 import json
-import time
 import unittest
 
 
@@ -16,11 +15,12 @@ class PetStore(unittest.TestCase):
         response = requests.get(self.url)
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
-        time.sleep(1)
-        assert json_response['id'] == 2, "No coincide"
-        assert json_response['name'] == 'John', "No coincide"
-        assert json_response['status'] == 'pending', "No coincide"
-        assert json_response['category']['id'] == 7, "No coincide"
+
+        assert response.status_code == 200
+        assert json_response['id'] == 2, 'No coincide'
+        assert json_response['name'] == 'John', 'No coincide'
+        assert json_response['status'] == 'pending', 'No coincide'
+        assert json_response['category']['id'] == 7, 'No coincide'
         assert json_response['category']['name'] == 'John'
 
     def tearDown(self):
