@@ -1,7 +1,9 @@
 # test_apis_course_of_udemy
 Test sobre APIs, del curso de Udemy https://www.udemy.com/course/la-guia-completa-test-de-api-rest-con-python/
 
-Los test fueron modificados por mi, con el fin de aprender y emprolijarlos, orientándolos al paradigma de objetos.
+Los test fueron modificados por mi, con el fin de practicar y emprolijarlos, orientándolos al paradigma de objetos.
+
+También agregué test nuevos.
 
 APIs usadas:
 
@@ -10,6 +12,8 @@ NASA: https://api.nasa.gov/
 Biblia: https://scripture.api.bible/
 
 Pet Store: https://petstore.swagger.io/
+
+Se requieren las librerías mencionadas más abajo.
 
 EN CURSO DESDE 9/07/2020
 
