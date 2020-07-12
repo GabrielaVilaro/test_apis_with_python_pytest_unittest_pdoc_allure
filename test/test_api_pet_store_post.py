@@ -39,6 +39,7 @@ class TestApiPost(unittest.TestCase):
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
 
+        assert response.status_code == 200
         assert json_response['id'] == 501, 'No coincide'
         assert json_response['category']['name'] == 'Perros', 'No coincide'
         assert json_response['tags'][0]['name'] == 'Rita', 'No coincide'

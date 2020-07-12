@@ -39,6 +39,7 @@ class TestApiPetStorePut(unittest.TestCase):
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
 
+        assert response.status_code == 200
         assert json_response['id'] is not None, "Esta Vacío"
         assert json_response['category']['name'] == "Conejo Malo", 'No coincide'
         assert json_response['category']['id'] == 3, 'No coincide'
