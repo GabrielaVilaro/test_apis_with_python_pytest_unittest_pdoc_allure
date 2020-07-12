@@ -10,8 +10,6 @@ import datetime
 import random
 import string
 
-Escenario = {}
-
 
 class Functions(Inicializar):
 
@@ -33,3 +31,12 @@ class Functions(Inicializar):
         self._endpoint = Inicializar.API_hostAddressBase + _RegexPartHost
         print(self._endpoint)
         return self._endpoint
+
+    def do_a_get(self):
+        new_header = Inicializar.API_headers
+        self._response = requests.get(self._endpoint, headers=new_header)
+        return self._response
+
+    def print_api_response(self):
+        self.json_response = json.loads(self._response.text)
+        print(json.dumps(self.json_response, indent=3))

@@ -26,6 +26,5 @@ class Inicializar():
         API_body = {}
 
         Scenary = {
-            'pet': '20',
-            'data': 'Hello'
+            'pet': '10'
         }
