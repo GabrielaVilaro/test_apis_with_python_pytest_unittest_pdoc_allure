@@ -7,7 +7,7 @@ class Test01(unittest.TestCase):
     def setUp(self):
         self.api_key = 'ded0add2b4cdc90d9a529ece52fa986b'
         self.new_header = {'api-key': self.api_key}
-        self.url = "https://api.scripture.api.bible/v1/bibles"
+        self.url = f"https://api.scripture.api.bible/v1/bibles"
 
     def test_api_bible_data_validation(self):
         '''Este test verifica , a través de un GET, los datos ID, nameLocal y language, e imprime el Json con la
