@@ -7,7 +7,9 @@ También agregué test nuevos.
 
 Como parte de la práctica, los test también fueron hechos con BDD, usando Gherkin y Behave.
 
-*En la carpeta test están los tests antiguos sin BDD.*
+BDD Hace fácilmente entendibles los test, en la carpeta features/steps/WebApiFeature.feature se puede ver esta implementación.
+
+***En la carpeta test están los tests antiguos sin BDD.***
 
 APIs usadas:
 
