@@ -5,6 +5,10 @@ Los test fueron modificados por mi, con el fin de practicar y emprolijarlos, ori
 
 También agregué test nuevos.
 
+Como parte de la práctica, los test también fueron hechos con BDD, usando Gherkin y Behave.
+
+En la carpeta test están los tests antiguos sin BDD.
+
 APIs usadas:
 
 NASA: https://api.nasa.gov/
