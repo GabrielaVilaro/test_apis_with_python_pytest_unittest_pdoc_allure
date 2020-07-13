@@ -7,7 +7,7 @@ También agregué test nuevos.
 
 Como parte de la práctica, los test también fueron hechos con BDD, usando Gherkin y Behave.
 
-En la carpeta test están los tests antiguos sin BDD.
+*En la carpeta test están los tests antiguos sin BDD.*
 
 APIs usadas:
 
@@ -16,6 +16,8 @@ NASA: https://api.nasa.gov/
 Biblia: https://scripture.api.bible/
 
 Pet Store: https://petstore.swagger.io/
+
+Twiitter: https://developer.twitter.com/ (Se debe solicitar a Twitter permisos para usar sus APIs.)
 
 Se requieren las librerías mencionadas más abajo.
 
