@@ -16,7 +16,7 @@ class TestApiNasaTwo(unittest.TestCase):
         self.url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={self.date}&end_date=2020-07-11&api_key={self.api_key}"
 
     def test_api_nasa_date_validation_response(self):
-        '''Este test valida los datos traídos de la API de la Nasa'''
+        '''Este tests valida los datos traídos de la API de la Nasa'''
 
         response = requests.request("GET", self.url)
         json_response = json.loads(response.text)
