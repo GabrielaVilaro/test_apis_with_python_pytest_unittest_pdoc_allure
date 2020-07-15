@@ -59,7 +59,7 @@ class Functions(Inicializar):
         if value.lower() == "random":
             value = set_ramdon_values(self)
             if entity.lower() == "email":
-                value = set_ramdon_values(self) + "@test.com"
+                value = set_ramdon_values(self) + "@tests.com"
 
         value = Functions.ReplaceWithQueryValues(self, value)
         Inicializar.API_body[entity] = str(value)
