@@ -1,0 +1,14 @@
+{
+   "id": 2,
+   "category": {
+      "id": 10,
+      "name": "lagarto"
+   },
+   "name": "Juancho",
+   "photoUrls": [
+      "foto1",
+      "foto2"
+   ],
+   "tags": [],
+   "status": "pending"
+}

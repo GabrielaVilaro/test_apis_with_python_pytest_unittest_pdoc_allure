@@ -9,7 +9,7 @@ class PetStore(unittest.TestCase):
         self.url = f"https://petstore.swagger.io/v2/pet/2"
 
     def test_api_petstore(self):
-        '''Este test verifica, a través del método GET, que los datos que devuelve la petición a la api sean
+        '''Este tests verifica, a través del método GET, que los datos que devuelve la petición a la api sean
         correctos'''
 
         response = requests.get(self.url)

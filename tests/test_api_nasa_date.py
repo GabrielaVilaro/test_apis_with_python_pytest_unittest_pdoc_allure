@@ -15,7 +15,7 @@ class TestNasaApi(unittest.TestCase):
         self.url = f"https://api.nasa.gov/planetary/apod?api_key={self.api_key}&date={self.Day}&hd={self.hd}"
 
     def test_api_nasa_get_data_validation(self):
-        '''Este test valida los datos traídos de la API de la Nasa'''
+        '''Este tests valida los datos traídos de la API de la Nasa'''
 
         response = requests.request("GET", self.url)
         json_response = json.loads(response.text)

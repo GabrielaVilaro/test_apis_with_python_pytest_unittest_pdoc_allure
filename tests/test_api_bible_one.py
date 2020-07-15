@@ -10,7 +10,7 @@ class Test01(unittest.TestCase):
         self.url = f"https://api.scripture.api.bible/v1/bibles"
 
     def test_api_bible_data_validation(self):
-        '''Este test verifica , a través de un GET, los datos ID, nameLocal y language, e imprime el Json con la
+        '''Este tests verifica , a través de un GET, los datos ID, nameLocal y language, e imprime el Json con la
         respuesta'''
 
         response = requests.get(self.url, headers=self.new_header)
