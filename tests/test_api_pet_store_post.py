@@ -1,9 +1,14 @@
+'''Este test realiza un post a la API de Pet Store de Swagger UI'https://petstore.swagger.io/'''
+
 import requests
 import json
 import unittest
 
+__pdoc__ = {}
+__pdoc__["TestApiPostPetStore"] = False
 
-class TestApiPost(unittest.TestCase):
+
+class TestApiPostPetStore(unittest.TestCase):
 
     def setUp(self):
         self.url = f"https://petstore.swagger.io/v2/pet"
@@ -33,7 +38,7 @@ class TestApiPost(unittest.TestCase):
         }"""
 
     def test_post_api_pet_store(self):
-        """Este tests envía un post a la url del pet store y verifica sus datos"""
+        """Este tests envía un post a la url del pet store y valida sus datos"""
 
         response = requests.post(self.url, headers=self.headers, data=self.body)
         json_response = json.loads(response.text)

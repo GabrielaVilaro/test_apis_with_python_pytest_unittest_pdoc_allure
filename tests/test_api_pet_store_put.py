@@ -1,6 +1,11 @@
+'''Este test realiza un PUT a la API de Pet Store de Swagger UI'https://petstore.swagger.io/'''
+
 import requests
 import json
 import unittest
+
+__pdoc__ = {}
+__pdoc__["TestApiPetStorePut"] = False
 
 
 class TestApiPetStorePut(unittest.TestCase):
