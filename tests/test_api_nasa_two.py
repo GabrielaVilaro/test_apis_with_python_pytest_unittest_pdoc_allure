@@ -1,7 +1,14 @@
+'''Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la nasa
+https://api.nasa.gov/
+'''
+
 import requests
 import datetime
 import json
 import unittest
+
+__pdoc__ = {}
+__pdoc__["TestApiNasaTwo"] = False
 
 
 class TestApiNasaTwo(unittest.TestCase):

@@ -1,9 +1,16 @@
+'''Este test realiza un GET a la API de Pet Store de Swagger UI'https://petstore.swagger.io/
+URL: https://petstore.swagger.io/v2/pet/2 y valida los datos'''
+
+
 import requests
 import json
 import unittest
 
+__pdoc__ = {}
+__pdoc__["TestPetStoreGet"] = False
 
-class PetStore(unittest.TestCase):
+
+class TestPetStoreGet(unittest.TestCase):
 
     def setUp(self):
         self.url = f"https://petstore.swagger.io/v2/pet/2"

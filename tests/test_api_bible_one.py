@@ -1,8 +1,16 @@
+'''Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la biblia
+https://bibliaapi.com/docs/
+'''
+
 import unittest
 import requests
 import json
 
-class Test01(unittest.TestCase):
+__pdoc__ = {}
+__pdoc__["TestBible"] = False
+
+
+class TestBible(unittest.TestCase):
 
     def setUp(self):
         self.api_key = 'ded0add2b4cdc90d9a529ece52fa986b'
@@ -13,7 +21,7 @@ class Test01(unittest.TestCase):
         '''Este tests verifica , a través de un GET, los datos ID, nameLocal y language, e imprime el Json con la
         respuesta'''
 
-        response = requests.get(self.url, headers=self.new_header)
+        response = requests.get(url=self.url, headers=self.new_header)
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
 
