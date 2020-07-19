@@ -11,6 +11,12 @@ BDD Hace fácilmente entendibles los test, en la carpeta features/steps/WebApiFe
 
 ***En la carpeta test están los tests antiguos sin BDD.***
 
+**Requisitos**
+
+    Python >= 3.5
+    Instalar las dependencias del proyecto: pip3 install -r requirements.txt
+    Pycharm
+
 APIs usadas:
 
 NASA: https://api.nasa.gov/
@@ -22,6 +28,10 @@ Pet Store: https://petstore.swagger.io/
 Twiitter: https://developer.twitter.com/ (Se debe solicitar a Twitter permisos para usar sus APIs.)
 
 Se requieren las librerías mencionadas más abajo.
+
+**La documentación completa del proyecto se puede ver abriendo el archivo /docs/tests/index.html en un navegador, haciendo click izquierdo y en "Open Browser" elejir su navegador de preferencia**
+
+Para generar la documentación usé pdocs3 (está dentro de requirements.txt)  pdoc --html tests
 
 EN CURSO DESDE 9/07/2020
 
