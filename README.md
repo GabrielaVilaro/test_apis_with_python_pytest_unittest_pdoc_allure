@@ -24,8 +24,6 @@ Pet Store: https://petstore.swagger.io/
 
 Twiitter: https://developer.twitter.com/ (Se debe solicitar a Twitter permisos para usar sus APIs.)
 
-Se requieren las librerías mencionadas más abajo.
-
 **La documentación completa del proyecto se puede ver abriendo el archivo /docs/tests/index.html en un navegador, haciendo click izquierdo y en "Open Browser" elejir su navegador de preferencia**
 
 <a href="https://ibb.co/RyCLjrW"><img src="https://i.ibb.co/0tfPs43/Screen-Shot-2020-07-19-at-15-09-07.png" alt="Screen-Shot-2020-07-19-at-15-09-07" border="0"></a>
