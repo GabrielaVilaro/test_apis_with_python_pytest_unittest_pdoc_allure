@@ -1,4 +1,4 @@
-# test_apis_course_of_udemy
+# test_apis_with_python_pytest_unittest_pdoc
 Test sobre APIs, del curso de Udemy https://www.udemy.com/course/la-guia-completa-test-de-api-rest-con-python/
 
 Los test fueron modificados por mi, con el fin de practicar y emprolijarlos, orientándolos al paradigma de objetos.
