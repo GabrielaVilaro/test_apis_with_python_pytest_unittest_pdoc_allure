@@ -30,11 +30,11 @@ class TestNasaApi(unittest.TestCase):
         print(json.dumps(json_response, indent=3))
 
         assert response.status_code == 200
-        assert json_response['copyright'] == "Emmanuel Paoly", 'No coincide'
-        assert json_response['date'] == "2020-07-09", 'No coincide'
-        assert json_response['url'] == "https://apod.nasa.gov/apod/image/2007/noctilucentNeowisePaoly600h.jpg", \
+        assert json_response['copyright'] == "Bill Peters", 'No coincide'
+        assert json_response['date'] == "2020-07-17", 'No coincide'
+        assert json_response['url'] == "https://apod.nasa.gov/apod/image/2007/DSC1028_PetersNEOWISEAuroralSpike_800.jpg", \
             'No coincide'
-        assert json_response['title'] == "Noctilucent Clouds and Comet NEOWISE", 'No coincide'
+        assert json_response['title'] == "NEOWISE of the North", 'No coincide'
 
     def tearDown(self):
         pass

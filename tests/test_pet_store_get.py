@@ -13,7 +13,7 @@ __pdoc__["TestPetStoreGet"] = False
 class TestPetStoreGet(unittest.TestCase):
 
     def setUp(self):
-        self.url = f"https://petstore.swagger.io/v2/pet/2"
+        self.url = f"https://petstore.swagger.io/v2/pet/501"
 
     def test_api_petstore(self):
         '''Este tests verifica, a través del método GET, que los datos que devuelve la petición a la api sean
@@ -24,11 +24,11 @@ class TestPetStoreGet(unittest.TestCase):
         print(json.dumps(json_response, indent=3))
 
         assert response.status_code == 200
-        assert json_response['id'] == 2, 'No coincide'
-        assert json_response['name'] == 'John', 'No coincide'
-        assert json_response['status'] == 'pending', 'No coincide'
-        assert json_response['category']['id'] == 7, 'No coincide'
-        assert json_response['category']['name'] == 'John'
+        assert json_response['id'] == 501, 'No coincide'
+        assert json_response['name'] == 'Luna', 'No coincide'
+        assert json_response['status'] == 'available', 'No coincide'
+        assert json_response['category']['id'] == 3, 'No coincide'
+        assert json_response['category']['name'] == 'Perros'
 
     def tearDown(self):
         pass

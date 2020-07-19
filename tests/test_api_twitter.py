@@ -21,6 +21,8 @@ class TestApiTwitter(unittest.TestCase):
         json_response = json.loads(tweet_response.text)
         print(json.dumps(json_response, indent=3))
         assert json_response['statuses'][0]['id_str'] == '1282630333343703041'
+        assert json_response['statuses'][0]['id'] == 1282630333343703041
+        assert json_response['statuses'][0]['truncated'] == True
 
     def tearDown(self):
         pass
