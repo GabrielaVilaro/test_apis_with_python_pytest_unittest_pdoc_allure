@@ -3,9 +3,9 @@ https://api.nasa.gov/
 '''
 
 import requests
-import datetime
 import json
 import unittest
+from apis.base_api_nasa import BaseNasaApi
 
 __pdoc__ = {}
 __pdoc__["TestApiNasaTwo"] = False
@@ -14,18 +14,12 @@ __pdoc__["TestApiNasaTwo"] = False
 class TestApiNasaTwo(unittest.TestCase):
 
     def setUp(self):
-        self.Format = "%Y-%m-%d"
-        self.BackDay = datetime.date.today() - datetime.timedelta(days=0)
-        self.Day = self.BackDay.strftime(self.Format)
-        self.api_key = 'YnzlCuLqw7MXZV1Sn9QJP5jgycwu25Rskj5LAHSK'
-        self.date = str(datetime.date.today().strftime("%Y-%m-%d"))
-        self.hd = 'False'
-        self.url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={self.date}&end_date={self.BackDay}&api_key={self.api_key}"
+        self.apiNasa = BaseNasaApi()
 
     def test_api_nasa_date_validation_response(self):
         '''Este tests valida los datos traídos de la API de la Nasa'''
 
-        response = requests.request("GET", self.url)
+        response = requests.request("GET", self.apiNasa.url_two)
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
 
