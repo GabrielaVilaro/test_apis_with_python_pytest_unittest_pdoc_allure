@@ -1,6 +1,6 @@
 '''Este test primero genera el token necesario para acceder a la cuenta y traer los datos e imprime el tokwn_type
-     y el access token, luego trae los datos del usaurio y hace las validaciones la API se debe solicitar a
-     Twitter en https://developer.twitter.com/'''
+y el access token, luego trae los datos del usaurio y hace las validaciones la API se debe solicitar a
+Twitter en https://developer.twitter.com/'''
 
 import requests
 import json
@@ -8,6 +8,7 @@ import unittest
 
 __pdoc__ = {}
 __pdoc__["TestApiTwitterAccessToken"] = False
+
 
 class TestApiTwitterAccessToken(unittest.TestCase):
     def setUp(self):
