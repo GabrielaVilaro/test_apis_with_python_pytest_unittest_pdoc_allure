@@ -16,3 +16,5 @@ class BaseApiTwitter:
         self.tweet = 'https://api.twitter.com/1.1/search/tweets.json?q=from%3AStevenWilsonHQ&result_type=mixed&count=2'
         self.response = requests.post(self.url, auth=(self.api_key, self.api_secret), data=self.body)
         self.Authorization_response = json.loads(self.response.text)
+        self.header = {"Content-Type": "application/json",
+                  "Authorization": "Bearer " + self.Authorization_response['access_token']}
