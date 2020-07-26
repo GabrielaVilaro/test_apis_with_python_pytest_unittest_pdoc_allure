@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.8.4" />
-<title>tests.test_api_pet_store_put API documentation</title>
-<meta name="description" content="Este test realiza un PUT a la API de Pet Store de Swagger UI&#39;https://petstore.swagger.io/" />
+<title>tests.test_api_bible_get API documentation</title>
+<meta name="description" content="Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la biblia
+https://bibliaapi.com/docs/" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
@@ -19,64 +20,44 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>tests.test_api_pet_store_put</code></h1>
+<h1 class="title">Module <code>tests.test_api_bible_get</code></h1>
 </header>
 <section id="section-intro">
-<p>Este test realiza un PUT a la API de Pet Store de Swagger UI'https://petstore.swagger.io/</p>
+<p>Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la biblia
+<a href="https://bibliaapi.com/docs/">https://bibliaapi.com/docs/</a></p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">&#39;&#39;&#39;Este test realiza un PUT a la API de Pet Store de Swagger UI&#39;https://petstore.swagger.io/&#39;&#39;&#39;
+<pre><code class="python">&#39;&#39;&#39;Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la biblia
+https://bibliaapi.com/docs/
+&#39;&#39;&#39;
 
+import unittest
 import requests
 import json
-import unittest
+from apis.base_api_bible import BaseApiBible
 
 __pdoc__ = {}
-__pdoc__[&#34;TestApiPetStorePut&#34;] = False
+__pdoc__[&#34;TestBible&#34;] = False
 
 
-class TestApiPetStorePut(unittest.TestCase):
+class TestBible(unittest.TestCase):
 
     def setUp(self):
-        self.url = f&#34;https://petstore.swagger.io/v2/pet&#34;
-        self.headers = {&#34;Content-Type&#34;: &#34;application/json&#34;, &#34;accept&#34;: &#34;application/json&#34;}
-        self.body = &#34;&#34;&#34;{
-          &#34;id&#34;: 10,
-          &#34;category&#34;: {
-            &#34;id&#34;: 3,
-            &#34;name&#34;: &#34;Conejo Malo&#34;
-          },
-          &#34;name&#34;: &#34;Bod Conejito&#34;,
-          &#34;photoUrls&#34;: [
-            &#34;https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg&#34;,
-            &#34;url2&#34;
-          ],
-          &#34;tags&#34;: [
-            {
-              &#34;id&#34;: 1,
-              &#34;name&#34;: &#34;tag3&#34;
-            },
-            {
-              &#34;id&#34;: 2,
-              &#34;name&#34;: &#34;tag4&#34;
-            }
-          ],
-          &#34;status&#34;: &#34;available&#34;
-        }&#34;&#34;&#34;
+        self.apiBible = BaseApiBible()
 
-    def test_api_pet_store_put(self):
-        &#34;&#34;&#34;Este tests hace un put a la url, cmabiando el nombre de la mascota&#34;&#34;&#34;
+    def test_api_bible_data_validation(self):
+        &#39;&#39;&#39;Este tests verifica , a través de un GET, los datos ID, nameLocal y language, e imprime el Json con la
+        respuesta&#39;&#39;&#39;
 
-        response = requests.put(self.url, headers=self.headers, data=self.body)
+        response = requests.get(url=self.apiBible.url, headers=self.apiBible.new_header)
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
-
         assert response.status_code == 200
-        assert json_response[&#39;id&#39;] is not None, &#34;Esta Vacío&#34;
-        assert json_response[&#39;category&#39;][&#39;name&#39;] == &#34;Conejo Malo&#34;, &#39;No coincide&#39;
-        assert json_response[&#39;category&#39;][&#39;id&#39;] == 3, &#39;No coincide&#39;
+        assert json_response[&#39;data&#39;][0][&#39;id&#39;] is not None, &#34;Is empty&#34;
+        assert json_response[&#39;data&#39;][0][&#39;language&#39;][&#39;nameLocal&#39;] == &#39;Nend&#39;
+        print(json_response[&#39;data&#39;][0][&#39;id&#39;], json_response[&#39;data&#39;][0][&#39;language&#39;][&#39;nameLocal&#39;])
 
     def tearDown(self):
         pass

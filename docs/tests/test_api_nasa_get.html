@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.8.4" />
-<title>tests.test_api_nasa_two API documentation</title>
+<title>tests.test_api_nasa_get API documentation</title>
 <meta name="description" content="Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la nasa
 https://api.nasa.gov/" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
@@ -20,7 +20,7 @@ https://api.nasa.gov/" />
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>tests.test_api_nasa_two</code></h1>
+<h1 class="title">Module <code>tests.test_api_nasa_get</code></h1>
 </header>
 <section id="section-intro">
 <p>Este test hace a través de un GET, las validaciones de la respuesta a la llamada a la API de la nasa
@@ -33,47 +33,47 @@ https://api.nasa.gov/" />
 https://api.nasa.gov/
 &#39;&#39;&#39;
 
+import unittest
 import requests
 import datetime
 import json
-import unittest
+from apis.base_api_nasa import BaseNasaApi
 
 __pdoc__ = {}
-__pdoc__[&#34;TestApiNasaTwo&#34;] = False
+__pdoc__[&#34;TestNasaApi&#34;] = False
 
 
-class TestApiNasaTwo(unittest.TestCase):
+class TestNasaApi(unittest.TestCase):
 
     def setUp(self):
-        self.Format = &#34;%Y-%m-%d&#34;
-        self.BackDay = datetime.date.today() - datetime.timedelta(days=0)
-        self.Day = self.BackDay.strftime(self.Format)
-        self.api_key = &#39;RNbDIcUjE81o0zefiEoJ1OaP6FMCBQcCzvUgRvrs&#39;
-        self.date = str(datetime.date.today().strftime(&#34;%Y-%m-%d&#34;))
-        self.hd = &#39;False&#39;
-        self.url = f&#34;https://api.nasa.gov/neo/rest/v1/feed?start_date={self.date}&amp;end_date=2020-07-11&amp;api_key={self.api_key}&#34;
+        self.apiNasa = BaseNasaApi()
 
-    def test_api_nasa_date_validation_response(self):
-        &#39;&#39;&#39;Este tests valida los datos traídos de la API de la Nasa&#39;&#39;&#39;
+    def test_api_nasa_get_data_validation_photo_of_day(self):
+        &#39;&#39;&#39;Este tests valida los datos traídos de la API de la Nasa, en este caso la foto del día&#39;&#39;&#39;
 
-        response = requests.request(&#34;GET&#34;, self.url)
+        response = requests.request(&#34;GET&#34;, self.apiNasa.url)
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
 
         assert response.status_code == 200
-        assert json_response[&#39;links&#39;][&#39;next&#39;] == &#34;http://www.neowsapp.com/rest/v1/feed?start_date=2020-07-12&amp;end_&#34; \
-                                                 &#34;date=2020-07-12&amp;detailed=false&amp;api_key=RNbDIcUjE81o0zefiEoJ1OaP6F&#34; \
-                                                 &#34;MCBQcCzvUgRvrs&#34;
-        assert json_response[&#39;links&#39;][&#39;prev&#39;] == &#34;http://www.neowsapp.com/rest/v1/feed?start_date=2020-07-10&amp;end_&#34; \
-                                                 &#34;date=2020-07-10&amp;detailed=false&amp;api_key=RNbDIcUjE81o0zefiEoJ1OaP6FMC&#34; \
-                                                 &#34;BQcCzvUgRvrs&#34;
-        assert json_response[&#39;links&#39;][&#39;self&#39;] == &#34;http://www.neowsapp.com/rest/v1/feed?start_date=2020-07-11&amp;end_&#34; \
-                                                 &#34;date=2020-07-11&amp;detailed=false&amp;api_key=RNbDIcUjE81o0zefiEoJ1OaP6FM&#34; \
-                                                 &#34;CBQcCzvUgRvrs&#34;
-        assert json_response[&#39;near_earth_objects&#39;][&#39;2020-07-11&#39;][0][&#39;links&#39;][&#39;self&#39;] == &#34;http://www.neowsapp.com&#34; \
-                                                                                        &#34;/rest/v1/neo/54016670?api&#34; \
-                                                                                        &#34;_key=RNbDIcUjE81o0zefiEoJ1O&#34; \
-                                                                                        &#34;aP6FMCBQcCzvUgRvrs&#34;
+        assert json_response[&#39;copyright&#39;] == &#34;Stephane Guisard&#34;, &#39;Not match&#39;
+        assert json_response[&#39;date&#39;] == &#34;2020-07-23&#34;, &#39;Not match&#39;
+        assert json_response[&#39;url&#39;] == &#34;https://apod.nasa.gov/apod/image/2007/SGUNeuschwansteinNeowiseIMG2532-1050.jpg&#34;, \
+            &#39;Not match&#39;
+        assert json_response[&#39;title&#39;] == &#34;Fairytale NEOWISE&#34;, &#39;Not match&#39;
+
+    def test_api_nasa_date_validation_response(self):
+        &#39;&#39;&#39;Este tests valida los datos traídos de la API de la Nasa&#39;&#39;&#39;
+
+        response = requests.request(&#34;GET&#34;, self.apiNasa.url_two)
+        json_response = json.loads(response.text)
+        print(json.dumps(json_response, indent=3))
+
+        assert response.status_code == 200
+        assert json_response[&#39;links&#39;][&#39;next&#39;] == &#39;http://www.neowsapp.com/rest/v1/feed?start_date=2020-07-20&amp;end_date=2020-07-20&amp;detailed=false&amp;api_key=YnzlCuLqw7MXZV1Sn9QJP5jgycwu25Rskj5LAHSK&#39;
+        assert json_response[&#39;links&#39;][&#39;prev&#39;] == &#39;http://www.neowsapp.com/rest/v1/feed?start_date=2020-07-18&amp;end_date=2020-07-18&amp;detailed=false&amp;api_key=YnzlCuLqw7MXZV1Sn9QJP5jgycwu25Rskj5LAHSK&#39;
+        assert json_response[&#39;links&#39;][&#39;self&#39;] == &#39;http://www.neowsapp.com/rest/v1/feed?start_date=2020-07-19&amp;end_date=2020-07-19&amp;detailed=false&amp;api_key=YnzlCuLqw7MXZV1Sn9QJP5jgycwu25Rskj5LAHSK&#39;
+        assert json_response[&#39;near_earth_objects&#39;][&#39;2020-07-19&#39;][0][&#39;links&#39;][&#39;self&#39;] == &#39;http://www.neowsapp.com/rest/v1/neo/3745588?api_key=YnzlCuLqw7MXZV1Sn9QJP5jgycwu25Rskj5LAHSK&#39;
 
     def tearDown(self):
         pass

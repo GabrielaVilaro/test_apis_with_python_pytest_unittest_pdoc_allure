@@ -35,6 +35,7 @@ y se validan los datos, la API se debe solicitar a Twitter en https://developer.
 import unittest
 import requests
 import json
+from apis.base_api_twitter import BaseApiTwitter
 
 __pdoc__ = {}
 __pdoc__[&#34;TestApiTwitter&#34;] = False
@@ -42,16 +43,28 @@ __pdoc__[&#34;TestApiTwitter&#34;] = False
 
 class TestApiTwitter(unittest.TestCase):
     def setUp(self):
-        self.header = {&#34;Content-Type&#34;: &#34;application/json&#34;, &#34;Authorization&#34;: &#34;Bearer &#34; +
-                                                                            &#34;AAAAAAAAAAAAAAAAAAAAAKBxGAEAAAAAIhCI8Z0oGZgcmxvr0oN2viBl3gg%3DbejKFdDxuK9r4jvxDZ519jqy8CzcNs&#34;
-                                                                            &#34;Dgn4QmidaehGG6hNxn53&#34;}
-        self.tweet = &#39;https://api.twitter.com/1.1/search/tweets.json?q=from%3AStevenWilsonHQ&amp;result_type=mixed&amp;count=2&#39;
+        self.apiBaseTwitter = BaseApiTwitter()
 
     def test_api_twitter_with_tweet(self):
-        tweet_response = requests.get(self.tweet, headers=self.header)
+        &#39;&#39;&#39;Este test hace un get sobre los datos de un tweet y los valida&#39;&#39;&#39;
+
+        tweet_response = requests.get(self.apiBaseTwitter.tweet, headers=self.apiBaseTwitter.header)
         json_response = json.loads(tweet_response.text)
         print(json.dumps(json_response, indent=3))
-        assert json_response[&#39;statuses&#39;][0][&#39;id_str&#39;] == &#39;1282630333343703041&#39;
+        assert json_response[&#39;statuses&#39;][0][&#39;id_str&#39;] == &#39;1286000604771487746&#39;
+        assert json_response[&#39;statuses&#39;][0][&#39;id&#39;] == 1286000604771487746
+        assert json_response[&#39;statuses&#39;][0][&#39;truncated&#39;] == True
+
+    def test_get_response_with_token(self):
+        &#39;&#39;&#39;Este test primero genera el token necesario para acceder a la cuenta y traer los datos e imprime el tokwn_type
+            y el access token, luego trae los datos del usaurio y hace las validaciones la API se debe solicitar a
+          Twitter en https://developer.twitter.com/&#39;&#39;&#39;
+
+        print(json.dumps(self.apiBaseTwitter.Authorization_response, indent=3))
+        tweet_response = requests.get(self.apiBaseTwitter.tweet, headers=self.apiBaseTwitter.header)
+        response = json.loads(tweet_response.text)
+        print(json.dumps(response, indent=3))
+        assert response[&#39;statuses&#39;][0][&#39;id_str&#39;] == &#39;1286000604771487746&#39;, &#39;Not match&#39;
 
     def tearDown(self):
         pass
