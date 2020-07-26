@@ -34,7 +34,7 @@ Corriendo allure serve allure_report se genera un reporte de allure framework au
 
 <a href="https://ibb.co/fvXdQbB"><img src="https://i.ibb.co/PQrGtR3/Screen-Shot-2020-07-19-at-14-58-53.png" alt="Screen-Shot-2020-07-19-at-14-58-53" border="0"></a>
 
-Y corriendo py.test --alluredir=allure_report ./tests  se puede ver el reposte desde la consola.
+Y corriendo py.test --alluredir=allure_report ./tests  se puede ver el reporte desde la consola.
 
 EN CURSO DESDE 9/07/2020
 
