@@ -4,7 +4,6 @@ https://api.nasa.gov/
 
 import unittest
 import requests
-import datetime
 import json
 from apis.base_api_nasa import BaseNasaApi
 
