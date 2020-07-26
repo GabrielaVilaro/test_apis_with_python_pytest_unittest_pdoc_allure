@@ -21,9 +21,7 @@ class TestApiTwitterAccessToken(unittest.TestCase):
         '''
 
         print(json.dumps(self.apiBaseTwitter.Authorization_response, indent=3))
-        header = {"Content-Type": "application/json",
-                  "Authorization": "Bearer " + self.apiBaseTwitter.Authorization_response['access_token']}
-        tweet_response = requests.get(self.apiBaseTwitter.tweet, headers=header)
+        tweet_response = requests.get(self.apiBaseTwitter.tweet, headers=self.apiBaseTwitter.header)
         response = json.loads(tweet_response.text)
         print(json.dumps(response, indent=3))
         assert response['statuses'][0]['id_str'] == '1286000604771487746', 'Not match'

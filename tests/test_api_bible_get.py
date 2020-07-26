@@ -15,17 +15,14 @@ class TestBible(unittest.TestCase):
 
     def setUp(self):
         self.apiBible = BaseApiBible()
-        self.api_key = self.apiBible.api_key
-        self.new_header = self.apiBible.new_header
-        self.url = self.apiBible.url
 
     def test_api_bible_data_validation(self):
         '''Este tests verifica , a través de un GET, los datos ID, nameLocal y language, e imprime el Json con la
         respuesta'''
-        response = requests.get(url=self.url, headers=self.new_header)
+
+        response = requests.get(url=self.apiBible.url, headers=self.apiBible.new_header)
         json_response = json.loads(response.text)
         print(json.dumps(json_response, indent=3))
-
         assert response.status_code == 200
         assert json_response['data'][0]['id'] is not None, "Is empty"
         assert json_response['data'][0]['language']['nameLocal'] == 'Nend'
